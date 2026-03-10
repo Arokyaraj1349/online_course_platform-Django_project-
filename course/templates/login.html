@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main {
+
+        height: 100vh;
+        width: 100%;
+        background-image: url("{% static 'image/background best.jpg' %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+    }
+
+    .form1 {
+        width: 400px;
+        height: 500px;
+        /* background-color: transparent; */
+        background-color: rgba(108, 11, 244, 0.5);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        /* padding-top: 50px; */
+    }
+    .form1 h1{
+        color: #f3a305;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+    }
+    .loginform{
+        /* background-color: #f3a305; */
+        width: 100%;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .loginform p{
+        color: white;
+    }
+    .loginform a{
+        color: #f3a305;
+    }
+    .loginformone{
+        /* background-color: #FFFFFF; */
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .loginformone input{
+        width: 220px;
+        height: 30px;
+        border: 2px solid white;
+        border-radius: 10px;
+        color: white;
+        background-color: rgba(108, 11, 244, 0.5);
+
+
+    }
+    .loginformone button{
+        width: 100px;
+        height: 30px;
+        border: white;
+        border-radius: 10px;
+        background-color: #f3a305;
+    }
+    input::placeholder {
+    color: white;
+    text-align: center;
+}
+    .about {
+        width: 50%;
+        height: 400px;
+        padding: 20px;
+        background-color: rgba(215, 38, 239, 0.7);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+    .about h1 {
+        
+        color: #F4B942;
+        font-size: 40px;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .aboutone h2 {
+        color: #f3a305;
+        font-size: 30px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .aboutone {
+        color: #FFFFFF;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="form1">
+            <h1>LOGIN</h1>
+            <div class="loginform">
+                <form action="" method="POST" class="loginformone">
+                    {% csrf_token %}
+                    <input type="text" placeholder="username" name="username">
+                    <input type="password" placeholder="password" name="password">
+                    <button type="submit">Login</button>
+                </form>
+                <p>New user? <a href="{% url 'signuppage' %}">Signup here</a></p>
+            </div>   
+        </div>
+        <div class="about">
+            <h1>carrier boosters</h1>
+            <div class="aboutone">
+                <h2>about us ..!</h2>
+                <p>Carrier Booster is a modern online learning platform dedicated to helping students and professionals
+                    upgrade their skills and accelerate their careers. We provide structured, high-quality courses
+                    designed to bridge the gap between academic knowledge and industry requirements.
+
+                    Our platform offers easy course enrollment, interactive learning materials, and progress tracking to
+                    ensure a smooth and engaging learning experience. We focus on practical knowledge, real-world
+                    projects, and career-oriented training.
+
+                    At Carrier Booster, our mission is simple — empower learners with the right skills to succeed in
+                    today’s competitive world.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

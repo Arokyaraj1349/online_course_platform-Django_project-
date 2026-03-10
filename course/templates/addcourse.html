@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <title>Add Course</title>
+</head>
+<style>
+    body{
+        margin: 0%;
+        padding: 0%;
+    }
+    .main{
+        height: 100vh;
+        width: 100%;
+        background-image: url("{% static 'image/background best.jpg' %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form1 {
+        width: 400px;
+        height: 500px;
+        /* background-color: transparent; */
+        background-color: rgba(108, 11, 244, 0.5);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        /* padding-top: 50px; */
+    }
+    .form1 h1{
+        color: #f3a305;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+    }
+    .loginform{
+        /* background-color: #f3a305; */
+        width: 100%;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .loginform p{
+        color: white;
+    }
+    .loginform a{
+        color: #f3a305;
+    }
+    .loginformone{
+        /* background-color: #FFFFFF; */
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .loginformone input{
+        width: 220px;
+        height: 30px;
+        border: 2px solid white;
+        border-radius: 10px;
+        color: white;
+        background-color: rgba(108, 11, 244, 0.5);
+
+
+    }
+    .loginformone textarea{
+        width: 220px;
+        height: 60px;
+        border: 2px solid white;
+        border-radius: 10px;
+        color: white;
+        background-color: rgba(108, 11, 244, 0.5);
+    }
+    .loginformone button{
+        width: 100px;
+        height: 30px;
+        border: white;
+        border-radius: 10px;
+        background-color: #f3a305;
+    }
+    input::placeholder {
+    color: white;
+    text-align: center;
+}
+</style>
+<body>
+    <div class="main">
+        <div class="form1">
+            <h1>ADD COURSE</h1>
+            <div class="loginform">
+                <form method="POST" enctype="multipart/form-data" class="loginformone">
+                    {% csrf_token %}
+                    <input type="text" name="title" placeholder="Course Title" required>
+                    <textarea name="description" placeholder="Description" required></textarea>
+                    <input type="number" name="price" placeholder="Price" required>
+                    <input type="file" name="image">
+                    <button type="submit">Add Course</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

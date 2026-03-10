@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/admin.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Admin Panel</div>
+        <div class="buttons">
+            <button class="logout-btn"><a href="{% url 'logout' %}">Logout</a></button>
+            <button class="logout-btn"><a href="{% url 'home' %}">user</a></button>
+        </div>
+    </nav>
+
+    <!-- STATISTICS -->
+    <section class="stats">
+        <div class="stat-card">
+            <h3>Total Courses</h3>
+            <h1>{{ courses|length }}</h1>
+        </div>
+
+        <div class="stat-card">
+            <h3>Total Users</h3>
+            <h1>{{ users|length }}</h1>
+        </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="courses-section">
+        <div class="courses-header">
+            <h2>Courses</h2>
+            <!-- <button class="add-btn">+ Add Course</button> -->
+            <a href="{% url 'add_course' %}" class="add-btn">+ Add Course</a>
+
+        </div>
+
+        
+        <div class="course-list">
+            {% for course in courses %}
+            <div class="card">
+                <h3>{{ course.title }}</h3>
+                <p>{{ course.price }} ₹</p>
+                <a href="{% url 'delete_course' course.id %}" class="delete">Delete</a>
+                <a href="{% url 'update_course' course.id %}" class="update">update</a>
+            </div>
+            {% endfor %}
+        </div>
+        </div>
+    </section>
+
+    <!-- USERS -->
+    <section class="users-section">
+        <h2>Registered Users</h2>
+
+        <div class="users-list">
+            {% for user in users %}
+            <p>{{ user.username }} - {{ user.email }}<p>
+            {% endfor %}
+        </div>
+    </section>
+
+</body>
+
+</html>

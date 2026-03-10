@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/user.css">
+</head>
+
+<body>
+    <!-- <h1>userpage</h1> -->
+    <div class="main">
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="logo">Career Booster</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#course">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+            <div>
+                <button class="btn"><a href="{% url 'logout' %}">Logout</a></button>
+                <button class="btn"><a href="{% url 'login' %}">login</a></button>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Boost Your Career <br> with Online Courses</h1>
+                <p>Learn new skills and advance your career with expert-led training.</p>
+                <button class="btn big">Get Started</button>
+            </div>
+        </section>
+        <!-- COURSES -->
+        <section class="courses" id="course">
+            <h2>Featured Courses</h2>
+            <div class="course-container">
+                {% for course in courses %}
+                <div class="card">
+                    <!-- <div> -->
+                    {% if course.image %}
+                    <img src="{{ course.image.url }}" width="200">
+                    {% endif %}
+                    <h3>{{ course.title }}</h3>
+                    <p>{{ course.description }}</p>
+                    <p>₹ {{ course.price }}</p>
+                    <!-- </div> -->
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- WHY US -->
+        <section class="why" id="about">
+            <h2>Why Choose Career Booster?</h2>
+            <div class="why-container">
+                <div class="why-box">
+                    <h3>Expert Instructors</h3>
+                    <p>Learn directly from industry experts with real-world experience and proven success.😎🔥</p>
+                </div>
+                <div class="why-box">
+                    <h3>Flexible Learning</h3>
+                    <p>Study anytime, anywhere at your own pace with complete flexibility to fit your schedule. 📚✨</p>
+                </div>
+                <div class="why-box">
+                    <h3>Interactive Content</h3>
+                    <p>Engage with hands-on lessons, quizzes, and real-world projects that make learning dynamic and
+                        practical. 🎯</p>
+                </div>
+                <div class="why-box">
+                    <h3>Career Support</h3>
+                    <p>Get dedicated career guidance, resume help, and interview preparation to land your dream job. 🚀
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL -->
+        <section class="testimonial">
+            <h2>What Our Students Say</h2>
+            <div class="testimonial-box">
+                <div class="image">
+                    <img src="../static/image/female.jfif" alt="">
+                </div>
+                <div class="content">
+                    <p>"Career Booster changed my life. The courses are practical and easy to follow!"</p>
+                    <h4>- Jessica Miller</h4>
+                </div>
+            </div>
+        </section>
+        <!-- <----------contact------------->
+        <section id="Contact">
+            <div class="container">
+                <div class="contact_con">
+                    <h2>Let's connect</h2>
+                    <p>Feel free to reach out. I’d love to connect with you!</p>
+                </div>
+                <form action="#" method="post" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll(".card");
+
+        window.addEventListener("scroll", () => {
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (cardTop < windowHeight - 100) {
+                    card.style.opacity = "1";
+                    card.style.transform = "translateY(0)";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

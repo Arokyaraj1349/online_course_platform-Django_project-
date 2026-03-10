@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #3a0ca3, #7209b7, #f72585);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    width: 100%;
+    height: 70px;
+}
+.logo{
+    color: #ffd60a;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+/* BUTTON */
+.btn {
+    background: #ffd60a;
+    color: black;
+    padding: 8px 18px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    animation: fadeIn 2s ease;
+    background: url(../image/bggo.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: ease; 
+    
+}
+
+.hero-text h1 {
+
+    font-size: 48px;
+}
+
+.hero-text p {
+    margin: 20px 0;
+}
+
+.big {
+    padding: 12px 30px;
+    font-size: 18px;
+}
+
+/* COURSES */
+.courses {
+    padding: 80px;
+    text-align: center;
+}
+
+.course-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 20px;
+    width: 280px;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+/* WHY */
+.why {
+    padding: 80px;
+    text-align: center;
+}
+
+.why-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.why-box {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 20px;
+    width: 200px;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.why-box:hover {
+    background: #ffd60a;
+    color: black;
+}
+
+/* TESTIMONIAL */
+.testimonial {
+    padding: 80px;
+    text-align: center;
+}
+
+.testimonial-box {
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 20px;
+    width: 60%;
+    margin: 30px auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+}
+
+/* contact */
+
+#Contact {
+    padding: 80px 60px;
+    background: rgba(255,255,255,0.1);
+}
+
+.contact_con {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    /* background-color: #2e8b57; */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: rgb(252, 38, 38);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #7209b7;
+}
+
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(40px);}
+    to {opacity: 1; transform: translateY(0);}
+}
